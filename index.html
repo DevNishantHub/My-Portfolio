@@ -14,9 +14,16 @@
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="js/tailwind.config.js" defer></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="css/style.css">    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS for sending emails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Replace with your own EmailJS public key
+            emailjs.init("4oTlnxslEer4uJYAJ");
+        })();
+    </script>
 </head>
 <body class="bg-slate-50 text-gray-800 bg-pattern">    <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50" aria-label="Main Navigation">
@@ -318,9 +325,8 @@
             <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">Have a project in mind or looking for a DevOps engineer? Let's connect!</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Contact Form -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
-                    <form class="space-y-6">
+                <!-- Contact Form -->                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                    <form id="contactForm" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="Your name" required>
@@ -333,7 +339,10 @@
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                             <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="How can I help you?" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center">
+                        <div id="formStatus" class="hidden">
+                            <p class="text-center py-2 px-4 rounded-md"></p>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center">
                             <span>Send Message</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>

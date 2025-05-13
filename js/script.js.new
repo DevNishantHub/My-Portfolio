@@ -48,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Enhanced smooth scrolling for navigation links with progress indicator
+      // Enhanced smooth scrolling for navigation links with progress indicator
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -117,8 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.flex.flex-col.md\\:flex-row.gap-8.relative').forEach(el => {
         el.classList.add('experience-item');
     });
-    
-    // Simple dark/light mode toggle function
+      // Simple dark/light mode toggle function
     window.toggleDarkMode = function() {
         document.body.classList.toggle('dark');
         localStorage.setItem('darkMode', document.body.classList.contains('dark'));
@@ -189,8 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', onScroll);
-    
-    // Form validation and email sending functionality
+      // Form validation and email sending functionality
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -231,39 +228,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...';
                 
                 // Prepare email content
+                const recipientEmail = 'nishantkumar211106@gmail.com'; // Your email address
                 const senderName = nameInput.value.trim();
                 const senderEmail = emailInput.value.trim();
                 const senderMessage = messageInput.value.trim();
                 
-                // Get current date in YYYY-MM-DD format
-                const currentDate = new Date().toISOString().split('T')[0];
-                
-                // First email - to portfolio owner
+                // Use EmailJS service
                 emailjs.send('service_duz7mh7', 'template_cew8zzh', {
                     to_name: "Nishant Kumar",
-                    to: "nishantkumar211106@gmail.com",
-                    from_name: senderName,
-                    from_email: senderEmail,
                     reply_to: senderEmail,
+                    from_name: senderName,
                     message: senderMessage,
-                    current_date: currentDate
+                    recipient: recipientEmail // Added this parameter to ensure recipient is set
                 })
                 .then(function(response) {
-                    console.log('Email to owner sent successfully!', response);
-                    
-                    // Second email - confirmation to the sender
-                    return emailjs.send('service_duz7mh7', 'template_scwnbuo', { // Replace with your new confirmation template ID
-                        to_email: senderEmail,
-                        to_name: senderName,
-                        from_name: "Nishant Kumar",
-                        from_email: "nishantkumar211106@gmail.com",
-                        reply_to: "nishantkumar211106@gmail.com",
-                        message: senderMessage,
-                        current_date: currentDate
-                    });
-                })
-                .then(function(response) {
-                    console.log('Confirmation email sent successfully!', response);
+                    console.log('Email sent successfully!', response);
                     contactForm.reset();
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<span>Message Sent!</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>';
@@ -286,20 +265,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(function(error) {
                     console.error('Failed to send email:', error);
-                    console.error('Error details:', {
-                        errorText: error.text,
-                        errorStatus: error.status,
-                        errorName: error.name
-                    });
-                    
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<span>Send Message</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>';
                     
-                    // Show detailed error message
+                    // Show error message
                     formStatus.classList.remove('hidden');
                     formStatus.querySelector('p').classList.add('bg-red-100', 'text-red-700');
                     formStatus.querySelector('p').classList.remove('bg-green-100', 'text-green-700');
-                    formStatus.querySelector('p').textContent = `Failed to send your message: ${error.text || 'Please try again later.'}`;
+                    formStatus.querySelector('p').textContent = 'Failed to send your message. Please try again later.';
                     
                     // Hide the status message after 5 seconds
                     setTimeout(() => {
@@ -359,6 +332,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add some console message for fun
     console.log("Welcome to my portfolio! Feel free to explore.");
-    console.log("Current date and time (UTC):", new Date().toISOString());
-    console.log("Current User's Login: DevNishantHub");
 });
