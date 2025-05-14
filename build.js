@@ -1,8 +1,8 @@
-// build.js - Cross-platform build script for CSS
+// build.js - Cross-platform build script for CSS and preparing for Vercel deployment
 const fs = require('fs');
 const path = require('path');
 
-console.log('Building CSS...');
+console.log('Building project for deployment...');
 
 // Create dist directory if it doesn't exist
 const distDir = path.join(__dirname, 'dist', 'css');

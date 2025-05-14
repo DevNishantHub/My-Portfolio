@@ -20,6 +20,16 @@ npm run build
 
 The build process combines the CSS files into a single optimized file. It works cross-platform (Windows, macOS, Linux) and is compatible with CI/CD environments like Vercel.
 
+### Deployment
+
+This project is configured for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Vercel will automatically build and deploy your site
+
+The `vercel.json` file configures the deployment settings.
+
 ### Project Structure
 
 - `/dist/css/output.css` - The production-ready CSS file
@@ -28,6 +38,7 @@ The build process combines the CSS files into a single optimized file. It works 
 - `/tailwind.config.js` - Configuration for Tailwind-compatible classes
 - `/postcss.config.js` - PostCSS configuration
 - `/build.js` - Cross-platform Node.js script for building the CSS
+- `/vercel.json` - Vercel deployment configuration
 
 ## Contact Form Configuration
 
