@@ -4,7 +4,8 @@
   "description": "This is a professional portfolio website for Nishant Kumar, a DevOps engineer.",
   "main": "index.js",
   "scripts": {
-    "build": "powershell -ExecutionPolicy Bypass -File .\\build-css.ps1",
+    "build": "node build.js",
+    "watch": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

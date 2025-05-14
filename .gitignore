@@ -7,7 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build output
-dist/
+# Keeping dist/ for Vercel deployment
 
 # Environment files
 .env

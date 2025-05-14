@@ -18,7 +18,7 @@ To build the CSS:
 npm run build
 ```
 
-The build process combines the CSS files into a single optimized file.
+The build process combines the CSS files into a single optimized file. It works cross-platform (Windows, macOS, Linux) and is compatible with CI/CD environments like Vercel.
 
 ### Project Structure
 
@@ -27,7 +27,7 @@ The build process combines the CSS files into a single optimized file.
 - `/src/css/custom.css` - Custom CSS styles
 - `/tailwind.config.js` - Configuration for Tailwind-compatible classes
 - `/postcss.config.js` - PostCSS configuration
-- `/build-css.ps1` - PowerShell script for building the CSS
+- `/build.js` - Cross-platform Node.js script for building the CSS
 
 ## Contact Form Configuration
 
