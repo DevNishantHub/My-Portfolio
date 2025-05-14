@@ -1,0 +1,180 @@
+/* Custom styles beyond Tailwind */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Enable hardware acceleration for smoother animations */
+.project-card, .hover-underline, .nav-link {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Better section spacing for visual hierarchy */
+section {
+    margin-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+}
+
+/* Add subtle section divider for better visual hierarchy */
+section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(79, 70, 229, 0.3), transparent);
+    transform: translateX(-50%);
+}
+
+/* Enhanced animated underline for links */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4f46e5; /* Indigo-600 */
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.hover-underline:hover::after,
+.hover-underline:focus::after {
+    width: 100%;
+}
+
+/* Animations for elements when they come into view */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.staggered-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.staggered-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.staggered-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.staggered-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.staggered-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Improved custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9; /* Slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8; /* Slate-400 */
+    border-radius: 10px;
+    border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b; /* Slate-500 */
+}
+
+/* Subtle background pattern */
+.bg-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Focus styles for better accessibility */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    .bg-pattern {
+        background-image: none;
+        background-color: #fff;
+    }
+}
+
+/* Print styles for better resume printing */
+@media print {
+    body {
+        padding-top: 0;
+        color: #000;
+        background: #fff;
+    }
+    
+    nav, footer, #backToTop, .bg-pattern {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .project-card {
+        break-inside: avoid;
+    }
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}

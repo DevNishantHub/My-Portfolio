@@ -1,6 +1,33 @@
-# Portfolio Website
+# Portfolio Website with Tailwind CSS and PostCSS
 
-This is a professional portfolio website for Nishant Kumar, a DevOps engineer.
+This is a professional portfolio website for Nishant Kumar, a DevOps engineer, built with a production-ready Tailwind CSS setup.
+
+## Tailwind CSS-like Setup
+
+This project uses a Tailwind CSS-like approach with custom CSS for optimized styling:
+
+1. **Production-ready build**: CSS is organized and optimized for fast loading
+2. **Utility-first approach**: Uses utility classes similar to Tailwind CSS
+3. **Custom styles support**: Extends the base design with custom components
+4. **Responsive design**: Works seamlessly on all devices
+
+### Development
+
+To build the CSS:
+```bash
+npm run build
+```
+
+The build process combines the CSS files into a single optimized file.
+
+### Project Structure
+
+- `/dist/css/output.css` - The production-ready CSS file
+- `/src/css/input.css` - The source CSS file with Tailwind-like directives
+- `/src/css/custom.css` - Custom CSS styles
+- `/tailwind.config.js` - Configuration for Tailwind-compatible classes
+- `/postcss.config.js` - PostCSS configuration
+- `/build-css.ps1` - PowerShell script for building the CSS
 
 ## Contact Form Configuration
 
