@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevOps Engineer Portfolio - Content coming soon">
+    <meta name="author" content="Nishant Kumar">
+    <meta name="theme-color" content="#4f46e5">    <title>Coming Soon | Nishant Kumar</title>
+    <!-- Tailwind CSS CDN -->    
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="js/tailwind.config.js" defer></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <style>
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.03'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Consistent content container */
+        .content-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .content-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .content-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen flex flex-col items-center justify-center">
+    <div class="content-container">
+        <div class="max-w-3xl w-full mx-auto bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-12 text-center">
+        <div class="mb-8">
+            <!-- Logo/Name -->
+            <h1 class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-500 mb-2">Nishant Kumar</h1>
+            <h2 class="text-xl md:text-2xl text-indigo-600 font-semibold">DevOps Engineer</h2>
+        </div>
+
+        <div class="mb-12">
+            <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-indigo-500 mb-8">
+                <img src="img/profile.jpeg" alt="Nishant Kumar - DevOps Engineer" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 -translate-x-full animate-pulse-slow"></div>
+            </div>
+            
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Coming Soon</h3>
+            <p class="text-xl text-gray-600 mb-6">My portfolio website is currently under construction.</p>
+            <p class="text-lg text-gray-700">I'm working on something awesome to showcase my skills and projects.</p>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-10">
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">AWS</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Kubernetes</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Docker</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Terraform</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">CI/CD</span>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/nishant-kumar-b8aa6b313/" class="text-2xl text-gray-700 hover:text-indigo-600 transition-colors hover:scale-110 transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-full p-1" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                <span class="sr-only">LinkedIn</span>
+            </a>
+            <a href="https://github.com/DevNishantHub" class="text-2xl text-gray-700 hover:text-indigo-600 transition-colors hover:scale-110 transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-full p-1" aria-label="GitHub profile">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span class="sr-only">GitHub</span>
+            </a>
+            <a href="#" class="text-2xl text-gray-700 hover:text-indigo-600 transition-colors hover:scale-110 transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-full p-1" aria-label="Email contact">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span class="sr-only">Email</span>
+            </a>        </div>
+    </div>
+    </div>
+
+    <div class="content-container mt-8">
+        <p class="text-gray-600 text-sm">© 2025 Nishant Kumar | DevOps Engineer | Delhi, India</p>
+    </div>
+
+    <!-- Minimal JavaScript -->
+    <script>
+        // Add any small enhancements or interactions here if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Page is fully loaded
+            console.log('Coming soon page loaded');
+        });
+    </script>
+</body>
+</html>

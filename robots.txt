@@ -1,0 +1,6 @@
+# robots.txt for Nishant Kumar's DevOps Portfolio Website
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.yourdomain.com/sitemap.xml

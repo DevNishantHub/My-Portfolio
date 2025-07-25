@@ -1,0 +1,21 @@
+{
+  "name": "prot---copy",
+  "version": "1.0.0",
+  "description": "This is a professional portfolio website for Nishant Kumar, a DevOps engineer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevNishantHub/My-Protfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DevNishantHub/My-Protfolio/issues"
+  },
+  "homepage": "https://github.com/DevNishantHub/My-Protfolio#readme"
+}
